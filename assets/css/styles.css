@@ -231,7 +231,7 @@ img {
   transition: 0.3s;
 }
 .button:hover {
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 36px rgba(6, 103, 130, 0.712);
 }
 
 /* ===== ABOUT =====*/
