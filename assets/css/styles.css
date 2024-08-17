@@ -189,10 +189,12 @@ img {
 }
 .home__title {
   font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
+  margin-bottom: var(--mb-0);
+  font-size: 7rem;
 }
 .home__title-color {
   color: var(--first-color);
+  font-size: 3rem;
 }
 .home__social {
   display: flex;
@@ -510,4 +512,22 @@ img {
   font-size: 40px;
   color: #fff;
   cursor: pointer;
+}
+
+/* Style the logo and title container */
+.nav__logo-container {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+}
+
+.nav__logo {
+  height: 50px; /* Adjust the height as needed */
+  margin: 10px; /* Space between logo and title */
+}
+
+.nav__title {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  font-weight: bold; /* Make title bold */
+  color: #333; /* Adjust the color as needed */
+  text-decoration: none; /* Remove underline from title */
 }
