@@ -51,6 +51,72 @@ const sr = ScrollReveal({
     // reset: true
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popup");
+    const popupClose = document.getElementById("popup-close");
+    const successMessage = document.getElementById("successMessage");
+
+    // Open popup when "Get Offer" button is clicked
+    document.querySelectorAll(".offer-button").forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            popup.style.display = "flex";
+        });
+    });
+
+    // Close popup
+    popupClose.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Form submission
+    document.getElementById("submitOffer").addEventListener("click", function () {
+        const email = document.getElementById("userEmail").value.trim();
+        const requirements = document.getElementById("userRequirements").value.trim();
+        const budget = document.getElementById("userBudget").value.trim();
+        
+        // Validation
+        let valid = true;
+        if (!email) {
+            document.getElementById("userEmail").classList.add("error");
+            valid = false;
+        } else {
+            document.getElementById("userEmail").classList.remove("error");
+        }
+        if (!requirements) {
+            document.getElementById("userRequirements").classList.add("error");
+            valid = false;
+        } else {
+            document.getElementById("userRequirements").classList.remove("error");
+        }
+        if (!budget) {
+            document.getElementById("userBudget").classList.add("error");
+            valid = false;
+        } else {
+            document.getElementById("userBudget").classList.remove("error");
+        }
+
+        if (valid) {
+            // Send email using EmailJS or server-side email handling
+            sendEmail(email, requirements, budget);
+        }
+    });
+
+    function sendEmail(email, requirements, budget) {
+        // Replace with your email handling or EmailJS integration here
+        console.log("Sending email:", email, requirements, budget);
+
+        // Success Animation
+        successMessage.style.display = "block";
+        setTimeout(() => {
+            successMessage.style.display = "none";
+            popup.style.display = "none";
+        }, 2000);
+    }
+});
+
+
+
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
 sr.reveal('.home__social-icon', { interval: 200 });
