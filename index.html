@@ -49,13 +49,8 @@
                         software solution designed to simplify complex tasks. With user-friendly features and powerful tools, 
                         it streamlines workflows, enhances productivity, and delivers efficient results for businesses and individuals alike. 
                         Explore the Elegance of Expression</p><br>
-                    <a href="https://www.linkedin.com/in/abdul-wahab-naseer-28a87527b" class="button">Contact Us</a>
+                    <a href="https://www.linkedin.com/in/abdul-wahab-naseer-28a87527b" class="button">Learn more</a>
                 </div>
-
-
-              
-                
-                
 
             <!--===== ABOUT =====-->
             <section class="about section " id="about">
@@ -230,7 +225,20 @@
                 <form id="offerForm">
                     <input type="email" id="userEmail" placeholder="Your Email" class="popup-input" required>
                     <textarea id="userRequirements" placeholder="Your Requirements" class="popup-input" required></textarea>
-                    <input type="text" id="userBudget" placeholder="Your Budget" class="popup-input" required>
+                    
+                    <!-- Currency Selection -->
+                    <select id="currency" class="popup-input" required>
+                        <option value="" disabled selected>Select Currency</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="CAD">CAD</option>
+                        <option value="PKR">PKR</option>
+                    </select>
+                    
+                    <!-- Budget Input (numeric only) -->
+                    <input type="number" id="userBudget" placeholder="Your Budget" class="popup-input" required>
+                    
                     <button type="button" id="submitOffer" class="popup-submit">Submit</button>
                 </form>
                 <div id="successMessage" class="success-message">Email Successfully Sent!</div>

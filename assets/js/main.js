@@ -73,23 +73,34 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("submitOffer").addEventListener("click", function () {
         const email = document.getElementById("userEmail").value.trim();
         const requirements = document.getElementById("userRequirements").value.trim();
+        const currency = document.getElementById("currency").value;
         const budget = document.getElementById("userBudget").value.trim();
         
         // Validation
         let valid = true;
+
         if (!email) {
             document.getElementById("userEmail").classList.add("error");
             valid = false;
         } else {
             document.getElementById("userEmail").classList.remove("error");
         }
+        
         if (!requirements) {
             document.getElementById("userRequirements").classList.add("error");
             valid = false;
         } else {
             document.getElementById("userRequirements").classList.remove("error");
         }
-        if (!budget) {
+        
+        if (!currency) {
+            document.getElementById("currency").classList.add("error");
+            valid = false;
+        } else {
+            document.getElementById("currency").classList.remove("error");
+        }
+        
+        if (!budget || isNaN(budget) || Number(budget) <= 0) {
             document.getElementById("userBudget").classList.add("error");
             valid = false;
         } else {
@@ -98,13 +109,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (valid) {
             // Send email using EmailJS or server-side email handling
-            sendEmail(email, requirements, budget);
+            sendEmail(email, requirements, currency, budget);
         }
     });
 
-    function sendEmail(email, requirements, budget) {
+    function sendEmail(email, requirements, currency, budget) {
         // Replace with your email handling or EmailJS integration here
-        console.log("Sending email:", email, requirements, budget);
+        console.log("Sending email:", email, requirements, currency, budget);
 
         // Success Animation
         successMessage.style.display = "block";
@@ -114,8 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000);
     }
 });
-
-
 
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });

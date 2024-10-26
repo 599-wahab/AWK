@@ -638,6 +638,19 @@ img {
   animation: shake 0.3s ease;
 }
 
+/* select popup inputn $ */
+.popup select.popup-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
